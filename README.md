@@ -1,170 +1,251 @@
-💡 ChainTotal — Web3 Threat Intelligence & Risk Scoring Platform
+# 🚀 ChainTotal — Web3 Threat Intelligence Platform
 
-A community-powered threat intelligence platform for Web3 that analyzes crypto assets (wallets, tokens, dApps, NFTs, and websites) and generates a risk score by combining community signals with technical analysis.
+> **Before you send money, check trust.**
 
-🚀 Overview
+ChainTotal is a **community-driven Web3 security and risk analysis platform** that helps users identify **scam wallets, malicious dApps, phishing websites, and risky token projects** before interacting with them.
 
-ChainTotal is designed as a “VirusTotal for Web3”, but with a crucial difference:
+It combines **technical blockchain analysis**, **community intelligence**, and **Stellar x402 micropayments** to create a **paid, on-demand trust layer for Web3**.
 
-Instead of only scanning data, it builds a living trust layer where:
+---
 
-Users report suspicious activity
-Community voting determines credibility
-Technical signals validate risk
-Every lookup is monetized via Stellar x402 micropayments
+## 🌐 Overview
 
-👉 The result is a paid, decentralized trust intelligence network.
+Web3 is transparent — but not always safe.
 
-🔍 What Can Be Analyzed?
+Users frequently interact with:
 
-Users can query:
+* Scam tokens
+* Phishing mint websites
+* Fake airdrops
+* Malicious smart contracts
+* Rug pull projects
 
-🔐 Wallet addresses
-🪙 Tokens / smart contracts
-🌐 Websites & domains
-📱 dApps
-🖼️ NFT collections
-📊 Risk Scoring System
+ChainTotal solves this by allowing users to **query any Web3 asset** and receive a **real-time risk score with explanation**.
 
-Each query produces a Risk Score (0–100):
+---
 
-0–30 → Low Risk 🟢
-31–60 → Medium Risk 🟡
-61–100 → High Risk 🔴
-Score Calculation
+## 🔍 Supported Assets
+
+ChainTotal can analyze:
+
+* 🔐 Wallet Addresses
+* 🪙 Tokens / Smart Contracts
+* 🌐 Websites & Domains
+* 📱 dApps
+* 🖼️ NFT Collections
+
+---
+
+## 📊 Risk Scoring System
+
+Each query returns a **Risk Score (0–100)**:
+
+* 🟢 **0–30 → Low Risk**
+* 🟡 **31–60 → Medium Risk**
+* 🔴 **61–100 → High Risk**
+
+### 🧠 Scoring Formula
+
 Final Score = (Technical Analysis × 0.6) + (Community Signals × 0.4)
-Factors Included
-1. Technical Analysis (60%)
-Smart contract behavior
-On-chain transaction patterns
-Liquidity & ownership distribution
-Domain age & similarity detection
-2. Community Intelligence (40%)
-User reports
-Verified evidence (TX hash, screenshots, links)
-Reputation-weighted voting
-🧠 Core Features
-🔹 1. Community-Driven Threat Intelligence
+
+---
+
+## ⚙️ Core Features
+
+### 🔹 Community-Driven Threat Intelligence
 
 Users can report:
 
-Phishing websites
-Scam wallets
-Rug pull tokens
-Fake airdrops
-Malicious dApps
+* Scam wallets
+* Phishing websites
+* Fake tokens
+* Malicious dApps
 
 Each report includes:
 
-Category
-Description
-Evidence
-Vote validation
-🔹 2. Reputation-Based Voting System
+* Category
+* Description
+* Evidence (TX hash, screenshots, links)
+
+---
+
+### 🔹 Reputation-Based Voting
 
 Not all votes are equal:
 
-New user → low weight
-Trusted contributor → higher weight
-Verified/staked user → highest weight
+* New users → low weight
+* Trusted users → higher weight
+* Verified users → highest weight
 
 👉 Prevents spam & Sybil attacks
 
-🔹 3. Explainable Risk Analysis
+---
 
-Each result includes “Why flagged?”
+### 🔹 Explainable Risk Analysis
 
-Example:
+Each result includes a **“Why flagged?”** section:
 
-Reported as phishing by 12 users
-Domain created 3 days ago
-Similar to known scam domains
-Contract ownership is centralized
-🔹 4. Confidence Score
+* Reported by users
+* Suspicious on-chain activity
+* Newly created domain
+* Similar to known scams
 
-Separates risk level from certainty
+---
 
-Example:
+### 🔹 Confidence Score
 
-Risk: 82 → High
-Confidence: Low
+Separates risk from certainty:
 
-👉 Makes the system more reliable and transparent
+* High Risk + High Confidence
+* High Risk + Low Confidence
 
-🔹 5. Wallet Relationship Mapping
+👉 Improves decision-making
+
+---
+
+### 🔹 Wallet Relationship Mapping
 
 Visualizes connections between suspicious wallets
 👉 Helps detect scam networks
 
-🔹 6. Project Timeline Tracking
-First seen
-First report
-Risk peak
-Last activity
-🔹 7. Scam Burst Detection
+---
+
+### 🔹 Scam Burst Detection
 
 Detects sudden spikes in reports
-👉 Early warning system for emerging scams
+👉 Early warning system
 
-💳 Payment Model (x402 on Stellar)
+---
 
-Every query is paid using micropayments via
-Stellar
+## 💳 Payment Model
 
-How It Works
-Each analysis request requires 1 x402 token
-Payment is processed before the result is revealed
-Works at HTTP request level (pay-per-query API)
-Access Tiers
-Free Tier
-Basic lookup
-Limited results
-Paid Query
-Full risk analysis
-Community reports
-Technical breakdown
-Risk explanation
-Premium Queries
-Deep scan
-Wallet behavior analysis
-Project reputation timeline
-Bulk API access
-🧩 System Architecture
-Frontend
-React / Next.js
-Search interface
-Risk dashboard
-Backend
-Node.js / TypeScript
-Risk engine
-Community system
-Blockchain Layer
-Stellar + x402 micropayment integration
-Database
-PostgreSQL
-Reports, votes, reputation, history
-⚙️ Key Capabilities (from your implementation)
-Natural Language Query (CLI & UI)
-Multi-asset support
-24-hour cache (no extra payment)
-Fraud detection & rate limiting
-Revenue tracking & analytics
-AI agent-based architecture (KIRO framework)
+ChainTotal uses **Stellar x402 micropayments**.
 
-📄 Your implementation details:
+### How it works:
 
-🧠 Why This Project Stands Out
+* Each query requires **1 x402 token**
+* Payment happens **before analysis**
+* Works as **pay-per-request API**
 
-✔ Solves a real Web3 problem (scams & trust)
-✔ Combines community + technical intelligence
-✔ Uses payment as a core mechanism (not optional)
-✔ Scales into an API product for wallets & explorers
-✔ Clear business model (pay-per-query)
+---
 
-💬 One-Line Pitch
+### 💡 Access Tiers
 
-ChainTotal is a paid, community-driven Web3 threat intelligence platform that allows users to verify the safety of wallets, tokens, and dApps before interacting with them.
+**Free Tier**
 
-🎯 Bonus (If you mention this in presentation)
+* Basic lookup
+* Limited data
 
-👉 “Before you send money, check trust.”
+**Paid Query**
+
+* Full risk score
+* Community reports
+* Technical analysis
+* Explanation
+
+**Premium**
+
+* Deep scan
+* Wallet behavior analysis
+* Project timeline
+* API access
+
+---
+
+## 🧩 Architecture
+
+**Frontend**
+
+* React / Next.js
+* Dashboard & search UI
+
+**Backend**
+
+* Node.js / TypeScript
+* Risk scoring engine
+* Community system
+
+**Blockchain**
+
+* Stellar + x402 micropayment layer
+
+**Database**
+
+* PostgreSQL
+
+---
+
+## ⚡ Key Capabilities
+
+* Natural Language Queries (CLI + UI)
+* Multi-asset support
+* 24-hour caching (no extra payment)
+* Fraud detection & rate limiting
+* Revenue tracking & analytics
+* AI Agent-based architecture
+
+---
+
+## 🚀 Getting Started
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run development server
+
+```bash
+npm run dev
+```
+
+### Start CLI
+
+```bash
+npm run dev:cli
+```
+
+---
+
+## 🧪 Example Usage
+
+```
+Analyze: 0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb
+
+Result:
+Risk Score: 45/100
+Risk Level: Medium
+
+Factors:
+- Community signals: low
+- Technical indicators: normal
+```
+
+---
+
+## 🎯 Vision
+
+ChainTotal aims to become the **standard trust layer for Web3**, enabling:
+
+* Safer transactions
+* Scam prevention
+* Community-powered intelligence
+* On-demand security checks
+
+---
+
+## 💬 One-Line Pitch
+
+**ChainTotal is a paid, community-driven Web3 threat intelligence platform that helps users verify trust before interacting with blockchain assets.**
+
+---
+
+## 📌 Future Improvements
+
+* Multi-chain support (Ethereum, Solana, etc.)
+* Advanced AI risk detection
+* Browser extension (real-time warnings)
+* Integration with wallets & explorers
+
+
