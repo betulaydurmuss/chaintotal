@@ -1,0 +1,63 @@
+{
+  "name": "chaintotal-risk-agent",
+  "version": "1.0.0",
+  "description": "Topluluk Destekli Tehdit İstihbaratı ve Risk Skorlama Platformu",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "start:cli": "node dist/index.js --cli",
+    "start:server": "node dist/server.js",
+    "start:production": "NODE_ENV=production node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "dev:cli": "ts-node src/index.ts --cli",
+    "dev:server": "ts-node src/server.ts",
+    "build": "tsc",
+    "build:production": "tsc --project tsconfig.production.json",
+    "test": "jest",
+    "test:intent": "ts-node test-intent.ts",
+    "test:intent:interactive": "ts-node test-intent.ts --interactive",
+    "test:payment": "ts-node test-payment.ts",
+    "test:agent-loop": "ts-node test-agent-loop.ts",
+    "test:coverage": "jest --coverage",
+    "test:integration": "jest --testPathPattern=integration",
+    "test:load": "artillery run tests/load/scenarios.yml",
+    "deploy:staging": "bash scripts/deploy.sh staging",
+    "deploy:production": "bash scripts/deploy.sh production",
+    "rollback": "bash scripts/rollback.sh",
+    "pm2:start": "pm2 start ecosystem.config.js --env production",
+    "pm2:stop": "pm2 stop ecosystem.config.js",
+    "pm2:restart": "pm2 restart ecosystem.config.js",
+    "pm2:logs": "pm2 logs chaintotal",
+    "pm2:monit": "pm2 monit",
+    "health": "curl http://localhost:3000/health",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "audit": "npm audit",
+    "audit:fix": "npm audit fix"
+  },
+  "keywords": [
+    "blockchain",
+    "stellar",
+    "risk-assessment",
+    "crypto",
+    "security"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "stellar-sdk": "^11.3.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "uuid": "^9.0.1",
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/uuid": "^9.0.7",
+    "@types/express": "^4.17.21",
+    "@types/cors": "^2.8.17",
+    "typescript": "^5.3.0",
+    "ts-node": "^10.9.2"
+  }
+}

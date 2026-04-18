@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChainTotal - Risk Assessment Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            background: #0A0E27;
+            color: #FFFFFF;
+        }
+
+        .gradient-cyan-purple {
+            background: linear-gradient(135deg, #00D9FF 0%, #B100FF 100%);
+        }
+
+        .gradient-danger {
+            background: linear-gradient(135deg, #FF0055 0%, #FFB800 100%);
+        }
+
+        .gradient-success {
+            background: linear-gradient(135deg, #00FF00 0%, #00D9FF 100%);
+        }
+
+        .glow-cyan {
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+        }
+
+        .glow-purple {
+            box-shadow: 0 0 20px rgba(177, 0, 255, 0.5);
+        }
+
+        .card {
+            background: #12151F;
+            border: 1px solid #1E2139;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00D9FF 0%, #B100FF 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .input-field {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(0, 217, 255, 0.3);
+            border-radius: 12px;
+            padding: 16px;
+            color: white;
+            width: 100%;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #00D9FF;
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
+        }
+
+        .input-field::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .badge {
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge-success {
+            background: rgba(0, 255, 0, 0.2);
+            color: #00FF00;
+        }
+
+        .badge-warning {
+            background: rgba(255, 184, 0, 0.2);
+            color: #FFB800;
+        }
+
+        .badge-danger {
+            background: rgba(255, 0, 85, 0.2);
+            color: #FF0055;
+        }
+
+        .stat-card {
+            background: rgba(18, 21, 31, 0.5);
+            border: 1px solid #1E2139;
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        .spinner {
+            border: 3px solid rgba(0, 217, 255, 0.3);
+            border-top-color: #00D9FF;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-lg" style="background: rgba(10, 14, 39, 0.95); border-bottom: 1px solid #1E2139;">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 gradient-cyan-purple rounded-lg flex items-center justify-center">
+                        <span class="text-2xl">🔐</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold">ChainTotal</h1>
+                        <p class="text-xs text-gray-400">Risk Assessment Platform</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="stat-card">
+                        <span class="text-sm text-gray-400">Balance:</span>
+                        <span class="text-lg font-bold text-cyan-400 ml-2" id="userBalance">15.42 x402</span>
+                    </div>
+                    <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
+                        <span class="text-xl">👤</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-8">
+        <!-- Hero Search Card -->
+        <div class="gradient-cyan-purple rounded-2xl p-12 mb-8 fade-in-up">
+            <h2 class="text-5xl font-bold mb-4">Instant Crypto Risk Assessment</h2>
+            <p class="text-xl mb-8 opacity-90">Enter a wallet, token, dApp, NFT or domain</p>
+            
+            <div class="flex gap-4">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="input-field flex-1" 
+                    placeholder="0x742d35Cc6634C0532925a3b844Bc9e7595f42D1b"
+                    style="background: rgba(255, 255, 255, 0.1);"
+                >
+                <button id="analyzeBtn" class="btn-primary px-8">
+                    <span id="analyzeBtnText">🔍 Analyze</span>
+                    <div id="analyzeBtnSpinner" class="spinner hidden mx-auto"></div>
+                </button>
+            </div>
+
+            <div class="flex gap-2 mt-4">
+                <button class="badge badge-success cursor-pointer">Wallet</button>
+                <button class="badge" style="background: rgba(255, 255, 255, 0.1);">Token</button>
+                <button class="badge" style="background: rgba(255, 255, 255, 0.1);">dApp</button>
+                <button class="badge" style="background: rgba(255, 255, 255, 0.1);">NFT</button>
+                <button class="badge" style="background: rgba(255, 255, 255, 0.1);">Website</button>
+            </div>
+        </div>
+
+        <!-- Quick Stats Bar -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+            <div class="stat-card fade-in-up" style="animation-delay: 0.1s;">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-400">Queries Today</p>
+                        <p class="text-2xl font-bold text-purple-400" id="queriesToday">0</p>
+                    </div>
+                    <span class="text-3xl">📊</span>
+                </div>
+            </div>
+            <div class="stat-card fade-in-up" style="animation-delay: 0.2s;">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-400">Success Rate</p>
+                        <p class="text-2xl font-bold text-green-400" id="successRate">0%</p>
+                    </div>
+                    <span class="text-3xl">✅</span>
+                </div>
+            </div>
+            <div class="stat-card fade-in-up" style="animation-delay: 0.3s;">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-400">Cache Hit Rate</p>
+                        <p class="text-2xl font-bold text-cyan-400" id="cacheHitRate">0%</p>
+                    </div>
+                    <span class="text-3xl">💾</span>
+                </div>
+            </div>
+            <div class="stat-card fade-in-up" style="animation-delay: 0.4s;">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-400">Network Status</p>
+                        <p class="text-2xl font-bold text-green-400">
+                            <span class="pulse">●</span> Connected
+                        </p>
+                    </div>
+                    <span class="text-3xl">🌐</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div id="resultsSection" class="hidden">
+            <h3 class="text-2xl font-bold mb-6">Analysis Results</h3>
+            <div class="card">
+                <pre id="resultsContent" class="text-sm overflow-auto" style="max-height: 400px;"></pre>
+            </div>
+        </div>
+
+        <!-- Recent Queries -->
+        <div class="mt-8">
+            <h3 class="text-2xl font-bold mb-6">Platform Analytics</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h4 class="text-lg font-semibold mb-4 text-cyan-400">📊 Query Analytics</h4>
+                    <div id="analyticsContent" class="space-y-2 text-sm">
+                        <p class="text-gray-400">Loading...</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4 class="text-lg font-semibold mb-4 text-purple-400">💰 Revenue Stats</h4>
+                    <div id="revenueContent" class="space-y-2 text-sm">
+                        <p class="text-gray-400">Loading...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 py-6 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center text-gray-400 text-sm">
+            <p>© 2026 ChainTotal - Topluluk Destekli Tehdit İstihbaratı Platformu</p>
+            <p class="mt-2">Powered by Stellar x402 Micropayments</p>
+        </div>
+    </footer>
+
+    <script src="/app.js"></script>
+</body>
+</html>
