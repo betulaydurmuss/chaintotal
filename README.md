@@ -248,4 +248,5 @@ ChainTotal aims to become the **standard trust layer for Web3**, enabling:
 * Browser extension (real-time warnings)
 * Integration with wallets & explorers
 
+https://www.loom.com/share/50bbcd120fe946db872a3348bf4c8ca4
 
