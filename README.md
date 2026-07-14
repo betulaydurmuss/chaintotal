@@ -62,7 +62,6 @@ Tarayıcınızda açın: **http://localhost:3000**
 - 📱 Responsive design (mobile, tablet, desktop)
 - ⚡ Auto-refresh stats (30s interval)
 
-Detaylı bilgi için [WEB_UI_GUIDE.md](WEB_UI_GUIDE.md) dosyasına bakın.
 
 ### 2. 💻 CLI Modu
 
@@ -151,7 +150,6 @@ npm run test:agent-loop
 DEBUG=true npm start
 ```
 
-Daha fazla örnek için [INTENT_EXAMPLES.md](INTENT_EXAMPLES.md) ve [DIALOG_FLOW_EXAMPLES.md](DIALOG_FLOW_EXAMPLES.md) dosyalarına bakın.
 
 ## Teknolojiler
 
@@ -160,24 +158,6 @@ Daha fazla örnek için [INTENT_EXAMPLES.md](INTENT_EXAMPLES.md) ve [DIALOG_FLOW
 - Natural Language Processing (Intent Classification)
 - Pattern Matching & Heuristics
 
-## 📚 Dokümantasyon
-
-- **[WEB_UI_GUIDE.md](WEB_UI_GUIDE.md)** - 🎨 Web arayüzü kullanım rehberi
-- **[QUICK_START.md](QUICK_START.md)** - 5 dakikada başlangıç rehberi
-- **[ARCHITECTURE.md](ARCHITECTURE.md)** - Detaylı mimari dokümantasyon
-- **[KIRO_AGENT_INTEGRATION.md](KIRO_AGENT_INTEGRATION.md)** - KIRO AI Agent Framework entegrasyonu
-- **[ANALYTICS_GUIDE.md](ANALYTICS_GUIDE.md)** - Platform analytics ve monitoring rehberi
-- **[DEPLOYMENT_CHECKLIST.md](DEPLOYMENT_CHECKLIST.md)** - Production deployment checklist
-- **[DEPLOYMENT_SUMMARY.md](DEPLOYMENT_SUMMARY.md)** - Deployment readiness summary
-- **[DIALOG_FLOW_EXAMPLES.md](DIALOG_FLOW_EXAMPLES.md)** - Detaylı diyalog akışı örnekleri
-- **[INTENT_EXAMPLES.md](INTENT_EXAMPLES.md)** - Intent örnekleri ve kullanım senaryoları
-- **[PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md)** - Proje yapısı ve dosya organizasyonu
-- **[PAYMENT_GUIDE.md](PAYMENT_GUIDE.md)** - Stellar x402 micropayment rehberi
-- **[RISK_ANALYSIS_GUIDE.md](RISK_ANALYSIS_GUIDE.md)** - Risk analizi metodolojisi ve parametreler
-- **[ERROR_SCENARIOS.md](ERROR_SCENARIOS.md)** - Hata senaryoları ve çözümleri
-- **[SESSION_MANAGEMENT.md](SESSION_MANAGEMENT.md)** - Oturum yönetimi ve cache sistemi
-
-## 🚀 Deployment
 
 ### Development
 
@@ -212,7 +192,6 @@ npm run build
 npm run start:cli
 ```
 
-See [DEPLOYMENT_CHECKLIST.md](DEPLOYMENT_CHECKLIST.md) for complete deployment guide.
 
 ## 🎯 Özellikler
 
@@ -291,7 +270,6 @@ ChainTotal, **KIRO AI Agent Framework** ile güçlendirilmiştir:
 
 - **24-Hour Cache**: Aynı varlık 24 saat içinde tekrar sorgulanırsa cache'den döner (ödeme yok)
 
-Detaylı bilgi için [KIRO_AGENT_INTEGRATION.md](KIRO_AGENT_INTEGRATION.md) dosyasına bakın.
 
 ### ✅ Platform Analytics & Monitoring
 
@@ -318,4 +296,3 @@ ChainTotal, kapsamlı **analytics ve monitoring** yetenekleri ile donatılmışt
   - **Automatic Blocking**: 1-24 hours
   - **Fraud Alerts**: Severity-based system
 
-Detaylı bilgi için [ANALYTICS_GUIDE.md](ANALYTICS_GUIDE.md) dosyasına bakın.
